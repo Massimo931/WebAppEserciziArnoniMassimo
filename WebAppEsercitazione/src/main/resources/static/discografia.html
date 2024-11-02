@@ -33,7 +33,7 @@
                         <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="index.html">Home</a>
                         <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="discografia.html">Discografia</a>
                         <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="concerti.html">Date dei concerti</a>
-                        <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="biglietti.html">Acquista Biglietti</a>
+                        <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="checkout.html">Acquista Biglietti</a>
                     </div>
                 </div>
             </div>
@@ -54,22 +54,22 @@
                     <form id="formAdd">
                         <div class="mb-3">
                             <label class="col-form-label">#</label>
-                            <input type="number" class="form-control" min="0" id="number">
+                            <input type="number" class="form-control" min="0" id="number" required>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Copertina</label>
-                            <input class="form-control" type="file" id="file">
+                            <input class="form-control" type="file" id="file" required>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Titolo</label>
-                            <input type="text" class="form-control" min="0" id="title">
+                            <input type="text" class="form-control" min="0" id="title" required>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Data di pubblicazione</label>
-                            <input type="date" class="form-control" min="0" id="date">
+                            <input type="date" class="form-control" min="0" id="date" required>
                         </div>
                     </form>
-                    <button type="submit" class="btn btn-warning" onclick="add_album()">Aggiungi</button>
+                    <button type="button" class="btn btn-warning" onclick="add_album()">Aggiungi</button>
                 </div>
             </div>
         </div>
@@ -146,9 +146,9 @@
         </table>
     </main>
 
-    <br>
+    <br><br><br>
 
-    <footer style="background-color: #2d2929;">
+    <footer style="background-color: #2d2929; position: fixed; bottom: 0; left: 0; width: 100%;">
         <nav class="navbar" style="background-color: #2d2929;">
             <div class="container">
                 <a class="navbar-brand" href="#">

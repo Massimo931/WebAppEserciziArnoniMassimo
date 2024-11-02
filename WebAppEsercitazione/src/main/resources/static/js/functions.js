@@ -1,4 +1,4 @@
-function remove_album(_id){
+function remove_album(_id) {
     const element = document.getElementById(_id);
     element.remove();
 }
@@ -27,4 +27,24 @@ function add_album() {
     document.getElementById("formAdd").reset();
 
     alert("L'album è stato aggiunto nella tabella");
+}
+
+function pay() {
+    alert("Biglietti acquistati");
+}
+
+function contrassegno()
+{
+    document.getElementById('cc-name').disabled = true
+    document.getElementById('cc-number').disabled = true
+    document.getElementById('cc-expiration').disabled = true
+    document.getElementById('cc-cvv').disabled = true
+}
+
+function carta()
+{
+    document.getElementById('cc-name').disabled = false
+    document.getElementById('cc-number').disabled = false
+    document.getElementById('cc-expiration').disabled = false
+    document.getElementById('cc-cvv').disabled = false
 }

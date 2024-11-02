@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acquista Biglietti</title>
+
+    <!-- icona -->
+    <link rel="icon" sizes="192x192" href="img/ironmaiden-icon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Funzioni JS personalizzate -->
+    <script src="js/functions.js"></script>
+</head>
+<body>
+    <header class="p-3 mb-4 sticky-top" style="background-color: #2d2929;">
+        <nav class="navbar" style="background-color: #2d2929;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/ironmaiden-icon.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                </a>
+                <a class="navbar-brand" style="color: #d6caca;" href="#">Iron Maiden Fan Page</a>
+                <button class="navbar-toggler" style="background-color: #d6caca;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="discografia.html">Discografia</a>
+                        <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="concerti.html">Date dei concerti</a>
+                        <a class="nav-link active" style="color: #d6caca;" aria-current="page" href="checkout.html">Acquista Biglietti</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="col">
+            <h4 class="mb-3">Indirizzo di spedizione</h4>
+            <form class="needs-validation" action="#" method="post">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" name="nome" required>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="form-label">Cognome</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" name="cognome" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Indirizzo di spedizione</label>
+                        <input type="text" class="form-control" id="address1" placeholder="" name="indirizzo" required>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label class="form-label">Paese</label>
+                        <input type="text" class="form-control" id="address2" placeholder="" name="paese" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Provincia</label>
+                        <input type="text" class="form-control" id="address3" placeholder="" name="provincia" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Codice postale</label>
+                        <input type="text" class="form-control" id="address4" placeholder="" name="codpos" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Numero di telefono</label>
+                        <input type="text" class="form-control" id="tel" placeholder="" name="tel" required>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <h4 class="mb-3">Pagamento</h4>
+
+                <div>
+                    <input type="radio" id="huey" name="metodo" value="credito" checked onclick="carta();">
+                    <label>Carta di credito</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="dewey" name="metodo" value="debito" onclick="contrassegno();">
+                    <label>Carta di debito</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="louie" name="metodo" value="contrassegno" onclick="contrassegno();">
+                    <label>Pagamento alla consegna</label>
+                </div>
+
+
+                <br>
+                <div class="row gy-3">
+                    <div class="col-md-6">
+                        <label for="cc-name" class="form-label">Nome completo dell'intestatario della carta</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" name="intestatario" required>
+                        <small class="text-muted">esempio: Mario Rossi</small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="cc-number" class="form-label">Numero della carta</label>
+                        <input type="text" class="form-control" id="cc-number" placeholder="" name="numero" minlength="16" maxlength="16" required>
+                        <small class="text-muted">esempio: 1111222233334444</small>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="cc-expiration" class="form-label">Data di scadenza</label>
+                        <input type="month" class="form-control" id="cc-expiration" placeholder="" name="scadenza" required>
+                        <small class="text-muted">esempio: ottobre 2003</small>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="cc-cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="" minlength="3" maxlength="3" name="cvv" required>
+                        <small class="text-muted">esempio: 931</small>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-warning btn-lg" type="submit" name="pagamento">Completa il pagamento</button>
+            </form>
+            <a href="index.html"><button class="w-100 btn btn-warning btn-lg" style="margin-top: 1%;">Home Page</button></a>
+        </div>
+    </main>
+
+    <br><br><br>
+
+    <footer style="background-color: #2d2929; position: fixed; bottom: 0; left: 0; width: 100%;">
+        <nav class="navbar" style="background-color: #2d2929;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="img/ironmaiden-icon.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                </a>
+                <a class="navbar-brand" style="color: #d6caca;" href="#">Iron Maiden Fan Page</a>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
